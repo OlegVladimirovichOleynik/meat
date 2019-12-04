@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ЯВМЯСО</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Табак NewYorkeR Club NewYorkerClub NYC кальян курить дым табачная смесь hookah tobacco Нью Йоркер Бёрли Бразилия крепко некрепко дым пар" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name = "viewport" content = "user-scalable=no, width=device-width">
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid px-lg-5">
+        <nav class="py-4">
+          <label for="drop" class="toggle">Меню</label>
+          <input type="checkbox" id="drop" />
+          <ul class="menu mt-2">
+            <li class="mr-lg-4 mr-3 active"><a href="#check" class="scroll">Проверка</a></li>
+            <li class="mr-lg-4 mr-3"><a href="#plus" class="scroll">Плюсы</a></li>
+            <li class="mr-lg-4 mr-3"><a href="#sostav" class="scroll">Состав</a></li>
+            <li class="mr-lg-4 mr-3"><a href="#certificate" class="scroll">Сертификаты</a></li>
+            <li class="mr-lg-4 mr-3"><a href="#realise" class="scroll">Реализация</a></li>
+            <li class="mr-lg-4 mr-3">
+              <label for="drop-2" class="toggle"> Контакты <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+              <a href="#">Контакты <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+              <input type="checkbox" id="drop-2" />
+              <ul>
+                  <li><a href="tel:+79219079065">89219079065</a></li>
+                  <li><a href="http://явмясо.рф">явмясо.рф</a></li>
+                  <li><a href="mailto:yavmyasosnus@gmail.com">yavmyasosnus@gmail.com</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  <%= yield %>
+  </body>
+</html>

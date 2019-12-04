@@ -1,0 +1,25 @@
+<section class="about py-5" id="check">
+    <div class="container py-3">
+        <h3 class="title text-center text-white"><span class="ab">Проверка табака на подлинность</span> Введите код</h3>
+        </div>
+    </div>
+    <center>
+      <div class="test_cipher">
+          <%= form_for :cipher, url: { action: 'test_cipher', controller: 'tobacco_cipher'}, remote: true do |f| %>
+            <%= f.text_field :cipher, required: true, placeholder: t(:entercode),  value: '' %><br>
+            <%= f.submit t(:check) %>
+          <% end %>
+          <% if flash[:notice] %>
+            <div class="alert alert-success" role="alert">
+              <h3 style="color: #01ca01"><%= flash[:notice] %></h3>
+            </div>
+          <% end %>
+          <% if flash[:error] %>
+            <div class="alert alert-danger" role="alert">
+              <h3 style="color: #ffef00"><%= flash[:error] %></h3>
+            </div>
+          <% end %>
+        </form>
+      </div>
+    </center>
+</section>

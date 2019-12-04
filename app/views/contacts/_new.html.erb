@@ -1,0 +1,77 @@
+<section class="contact py-5" id="contacts">
+    <div class="container py-lg-5 py-3"><br><br><br><br><br><br><br>
+        <h3 class="title"><span>Контакты</span></h3>
+        <div class="row contact-grids mt-lg-5 mt-4">
+            <div class="col-lg-5 contact-left">
+              <h5>По всем вопросам пишите:</h5>
+
+                <div class="row">
+                    <div class="col-1 pr-0 icon">
+                        <span class="fa fa-map-marker" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-11">
+                        <p>Санкт-Петербург</p>
+                    </div>
+                    <div class="col-1 pr-0 icon my-2">
+                        <span class="fa fa-phone" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-11 my-2">
+                        <p><a href="tel:+79090961933">8 (909)-096-19-33</a></p>
+                    </div>
+                    <div class="col-1 pr-0 icon my-2">
+                        <span class="fa fa-whatsapp" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-11 my-2">
+                        <p><a href="https://wa.me/79090961933">8 (909)-096-19-33</a></p>
+                    </div>
+                    <div class="col-1 pr-0 icon">
+                        <span class="fa fa-envelope-open" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-11">
+                        <p><a href="mailto:tobacco@newyorkerclub.ru"> tobacco@newyorkerclub.ru</a></p>
+                    </div>
+                    <div class="col-1 pr-0 icon">
+                        <span class="fa fa-vk" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-11">
+                        <p><a href="https://vk.com/nyctobacco"> Мы в Вконтакте</a></p>
+                    </div>
+                    <div class="col-1 pr-0 icon">
+                        <span class="fa fa-instagram" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-11">
+                        <p><a href="https://www.instagram.com/newyorkerclub/"> Мы в Instagram</a></p>
+                    </div>
+                </div><br>
+            </div>
+            <div class="col-lg-7 mt-lg-0 mt-5 contact-right">
+                <h4 class="mb-4">Есть вопросы? Напишите нам!</h4>
+                <%= form_for :contacts, url: { action: 'create', controller: 'contacts'}, remote: true do |f| %>
+                    <label><span class="fa mr-2 fa-user" aria-hidden="true"></span> Имя</label>
+                    <%= f.text_field :name, required: true, placeholder: t(:name),  value: '' %>
+                    <div class="clearfix"></div>
+                    <label><span class="fa mr-2 fa-envelope-open" aria-hidden="true"></span>Email</label>
+                    <%= f.text_field :email, required: true, placeholder: t(:email),  value: '' %>
+                    <div class="clearfix"></div>
+                    <label><span class="fa mr-2 fa-edit" aria-hidden="true"></span>Вопрос</label>
+                    <%= f.text_field :message, placeholder: t(:message),  value: '' %>
+                    <%= f.submit t(:submit) %>
+                <% end %>
+            </div>
+                <center>
+                <% if flash[:yeap] %>
+                  <div class="alert alert-success" role="alert">
+                    <%= flash[:yeap] %>
+                  </div>
+                <% end %>
+                <% if flash[:nott] %>
+                  <div class="alert alert-danger" role="alert">
+                    <%= flash[:nott] %>
+                  </div>
+                <% end %>
+                </center>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
